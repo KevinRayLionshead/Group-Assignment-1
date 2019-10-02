@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class EntityFactory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Vector3 spawnPosition;
+    public GameObject player;
+    public GameObject plane;
+    public GameObject cube;
+    public GameObject sphere;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void SpawnPlayer() { Instantiate(player, spawnPosition, Quaternion.identity); }
+    public void SpawnPlane() { Instantiate(plane, spawnPosition, Quaternion.identity); }
+    public void SpawnCube() { Instantiate(cube, spawnPosition, Quaternion.identity); }
+    public void SpawnSphere() { Instantiate(sphere, spawnPosition, Quaternion.identity); }
 }
