@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EntityFactory : MonoBehaviour
 {
-    private Vector3 spawnPosition;
+    public Vector3 spawnPosition;
     public GameObject player;
     public GameObject plane;
     public GameObject cube;
