@@ -7,6 +7,7 @@ public class EntityFactory : MonoBehaviour
     public static EntityFactory instance;
 
     public List<GameObject> objectList;
+    public List<GameObject> undoObjectList;
 
     public Vector3 spawnPosition;
     public GameObject player;
