@@ -2,65 +2,69 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-interface Command
+public interface Command
 {
     void Execute();
 }
 
 public class SpawnPlayer : Command
 {
-    EntityFactory entityFactory = EntityFactory.instance;
-
     public void Execute()
     {
-        entityFactory.SpawnPlayer();
+        EntityFactory.GetInstance.SpawnPlayer();
     }
 }
 public class SpawnPlane : Command
 {
-    EntityFactory entityFactory = EntityFactory.instance;
-
     public void Execute()
     {
-        entityFactory.SpawnPlane();
+        EntityFactory.GetInstance.SpawnPlane();
     }
 }
 public class SpawnCube : Command
 {
-    EntityFactory entityFactory = EntityFactory.instance;
-
     public void Execute()
     {
-        entityFactory.SpawnCube();
+        EntityFactory.GetInstance.SpawnCube();
     }
 }
 public class SpawnSphere : Command
 {
-    EntityFactory entityFactory = EntityFactory.instance;
-
     public void Execute()
     {
-        entityFactory.SpawnSphere();
+        EntityFactory.GetInstance.SpawnSphere();
     }
 }
 
 
 public class Undo : Command
 {
-    EntityFactory entityFactory = EntityFactory.instance;
     public void Execute()
     {
-        entityFactory.undoObjectList.Add(entityFactory.objectList[entityFactory.objectList.Count]);
-        entityFactory.objectList.RemoveAt(entityFactory.objectList.Count);
+        EntityFactory entityFactory = EntityFactory.GetInstance;
+        GameObject gameObject = entityFactory.objectList[entityFactory.objectList.Count - 1];
+
+        entityFactory.undoObjectList.Add(gameObject);
+
+        entityFactory.objectList.RemoveAt(entityFactory.objectList.Count - 1);
+        gameObject.SetActive(false);
+
     }
 }
 public class Redo : Command
 {
-    EntityFactory entityFactory = EntityFactory.instance;
     public void Execute()
     {
-        entityFactory.objectList.Add(entityFactory.undoObjectList[entityFactory.undoObjectList.Count]);
-        entityFactory.undoObjectList.RemoveAt(entityFactory.undoObjectList.Count);
+        EntityFactory entityFactory = EntityFactory.GetInstance;
+
+        entityFactory.objectList.Add(entityFactory.undoObjectList[entityFactory.undoObjectList.Count-1]);
+
+        GameObject gameObject = entityFactory.objectList[entityFactory.objectList.Count - 1];
+
+        gameObject.SetActive(true);
+
+        entityFactory.undoObjectList.RemoveAt
+            (entityFactory.undoObjectList.Count-1);
     }
 }
 

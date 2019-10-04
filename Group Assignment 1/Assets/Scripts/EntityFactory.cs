@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EntityFactory : MonoBehaviour
 {
-    public static EntityFactory instance;
+    private static EntityFactory instance = null;
 
     public List<GameObject> objectList;
     public List<GameObject> undoObjectList;
@@ -15,7 +15,12 @@ public class EntityFactory : MonoBehaviour
     public GameObject cube;
     public GameObject sphere;
 
-    public EntityFactory GetInstance
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
+    public static EntityFactory GetInstance
     {
         get
         {
@@ -27,8 +32,37 @@ public class EntityFactory : MonoBehaviour
             return instance;
         }
     }
-    public void SpawnPlayer() { Instantiate(player, spawnPosition, Quaternion.identity); objectList.Add(player); }
-    public void SpawnPlane() { Instantiate(plane, spawnPosition, Quaternion.identity); objectList.Add(plane); }
-    public void SpawnCube() { Instantiate(cube, spawnPosition, Quaternion.identity); objectList.Add(cube); }
-    public void SpawnSphere() { Instantiate(sphere, spawnPosition, Quaternion.identity); objectList.Add(sphere); }
+    public void SpawnPlayer()
+    { objectList.Add(Instantiate(player, spawnPosition, Quaternion.identity)); }
+    public void SpawnPlane()
+    { objectList.Add(Instantiate(plane, spawnPosition, Quaternion.identity)); }
+    public void SpawnCube()
+    { objectList.Add(Instantiate(cube, spawnPosition, Quaternion.identity)); }
+    public void SpawnSphere()
+    { objectList.Add(Instantiate(sphere, spawnPosition, Quaternion.identity)); }
+
+    private void Update()
+    {
+
+        if (objectList.Count > 0)
+        {
+            GameObject gameObject = objectList[objectList.Count - 1];
+            if (Input.GetKey(KeyCode.W))
+            {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.1f, gameObject.transform.position.z);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 0.1f, gameObject.transform.position.z);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x - 0.1f, gameObject.transform.position.y, gameObject.transform.position.z);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x + 0.1f, gameObject.transform.position.y, gameObject.transform.position.z);
+            }
+        }
+    }
 }
