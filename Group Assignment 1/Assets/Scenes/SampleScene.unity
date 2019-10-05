@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 197033546}
   - component: {fileID: 197033545}
   m_Layer: 5
-  m_Name: Spawn Plane
+  m_Name: Spawn Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 267073893}
   - component: {fileID: 267073892}
   m_Layer: 5
-  m_Name: Spawn Sphere
+  m_Name: Spawn Flower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -716,7 +716,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Spawn Sphere
+  m_Text: Spawn Flower
 --- !u!222 &383829765
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -793,7 +793,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Spawn Player
+  m_Text: Spawn Rock
 --- !u!222 &532581223
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1186,10 +1186,10 @@ MonoBehaviour:
   objectList: []
   undoObjectList: []
   spawnPosition: {x: 0, y: 0, z: 0}
-  player: {fileID: 3741129157357191794, guid: 8a6fe9a287ef4cb4ab2ea526ffc61209, type: 3}
+  player: {fileID: 100002, guid: fa6d269e1d4d2b5438b1b46fc6e73352, type: 3}
   plane: {fileID: 109402, guid: aae542b8a65f39b49b008fa689ce9804, type: 3}
   cube: {fileID: 193742, guid: 9c74caa742791864f9c678287121e6c9, type: 3}
-  sphere: {fileID: 5746263056789737294, guid: 09892efde25b46d44bfba429485c33d5, type: 3}
+  sphere: {fileID: 100000, guid: f1c3f8e347f55f44e98e7ea73efac66e, type: 3}
 --- !u!4 &864839721
 Transform:
   m_ObjectHideFlags: 0
@@ -1441,7 +1441,7 @@ GameObject:
   - component: {fileID: 1025991040}
   - component: {fileID: 1025991039}
   m_Layer: 5
-  m_Name: Spawn Cube
+  m_Name: Spawn Bush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1570,7 +1570,7 @@ GameObject:
   - component: {fileID: 1281721054}
   - component: {fileID: 1281721053}
   m_Layer: 5
-  m_Name: Spawn Player
+  m_Name: Spawn Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
