@@ -52,7 +52,7 @@ public class SaveAndLoad : MonoBehaviour
         {
             tempList.Add(temp2[i]);
         }
-        for(int i = 0; i < tempList.Count/4; i++)
+        for(int i = 0; i < tempList.Count*2; i++)
         {
             Vector3 position = new Vector3(0,0,0);
             position.x = tempList[0];
