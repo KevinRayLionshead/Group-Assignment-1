@@ -77,6 +77,15 @@ public class EntityFactory : MonoBehaviour
             {
                 gameObject.transform.position = new Vector3(gameObject.transform.position.x + 0.1f, gameObject.transform.position.y, gameObject.transform.position.z);
             }
+            if (Input.GetKey(KeyCode.RightShift))
+            {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z+0.1f);
+            }
+            if (Input.GetKey(KeyCode.RightControl))
+            {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z -0.1f);
+            }
+
         }
     }
 }

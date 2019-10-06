@@ -19,25 +19,25 @@ public class MovementScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) //Press A to move left
         {
             Vector3 position = this.transform.position;
-            position.x--;
+            position.x -=0.1f;
             this.transform.position = position;
         }
         if (Input.GetKey(KeyCode.D)) //Press D to move right
         {
             Vector3 position = this.transform.position;
-            position.x++;
+            position.x+=0.1f;
             this.transform.position = position;
         }
         if (Input.GetKey(KeyCode.W)) //Press W to move forward
         {
             Vector3 position = this.transform.position;
-            position.z++;
+            position.z+=0.1f;
             this.transform.position = position;
         }
         if (Input.GetKey(KeyCode.S)) //Press S to move backwards
         {
             Vector3 position = this.transform.position;
-            position.z--;
+            position.z-=0.1f;
             this.transform.position = position;
         }
         /*
