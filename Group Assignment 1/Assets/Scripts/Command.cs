@@ -7,32 +7,32 @@ public interface Command
     void Execute();
 }
 
-public class SpawnPlayer : Command
+public class SpawnRock : Command
 {
     public void Execute()
     {
-        EntityFactory.GetInstance.SpawnPlayer();
+        EntityFactory.GetInstance.SpawnRock();
     }
 }
-public class SpawnPlane : Command
+public class SpawnTree : Command
 {
     public void Execute()
     {
-        EntityFactory.GetInstance.SpawnPlane();
+        EntityFactory.GetInstance.SpawnTree();
     }
 }
-public class SpawnCube : Command
+public class SpawnBush : Command
 {
     public void Execute()
     {
-        EntityFactory.GetInstance.SpawnCube();
+        EntityFactory.GetInstance.SpawnBush();
     }
 }
-public class SpawnSphere : Command
+public class SpawnFlower : Command
 {
     public void Execute()
     {
-        EntityFactory.GetInstance.SpawnSphere();
+        EntityFactory.GetInstance.SpawnFlower();
     }
 }
 

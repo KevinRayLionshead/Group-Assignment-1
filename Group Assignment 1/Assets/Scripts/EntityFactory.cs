@@ -12,10 +12,10 @@ public class EntityFactory : MonoBehaviour
     public List<float> undoTypeObjectList;
 
     public Vector3 spawnPosition;
-    public GameObject player;
-    public GameObject plane;
-    public GameObject cube;
-    public GameObject sphere;
+    public GameObject rock;
+    public GameObject tree;
+    public GameObject bush;
+    public GameObject flower;
 
     private void Awake()
     {
@@ -34,24 +34,24 @@ public class EntityFactory : MonoBehaviour
             return instance;
         }
     }
-    public void SpawnPlayer()
+    public void SpawnRock()
     {
-        objectList.Add(Instantiate(player, spawnPosition, Quaternion.identity));
+        objectList.Add(Instantiate(rock, spawnPosition, Quaternion.identity));
         objectTypeList.Add(0);
     }
-    public void SpawnPlane()
+    public void SpawnTree()
     {
-        objectList.Add(Instantiate(plane, spawnPosition, Quaternion.identity));
+        objectList.Add(Instantiate(tree, spawnPosition, Quaternion.identity));
         objectTypeList.Add(1);
     }
-    public void SpawnCube()
+    public void SpawnBush()
     {
-        objectList.Add(Instantiate(cube, spawnPosition, Quaternion.identity));
+        objectList.Add(Instantiate(bush, spawnPosition, Quaternion.identity));
         objectTypeList.Add(2);
     }
-    public void SpawnSphere()
+    public void SpawnFlower()
     {
-        objectList.Add(Instantiate(sphere, spawnPosition, Quaternion.identity));
+        objectList.Add(Instantiate(flower, spawnPosition, Quaternion.identity));
         objectTypeList.Add(3);
     }
 

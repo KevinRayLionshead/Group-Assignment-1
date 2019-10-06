@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
-    SpawnPlayer player = new SpawnPlayer();
-    SpawnPlane plane = new SpawnPlane();
-    SpawnCube cube = new SpawnCube();
-    SpawnSphere sphere = new SpawnSphere();
+    SpawnRock rock = new SpawnRock();
+    SpawnTree tree = new SpawnTree();
+    SpawnBush bush = new SpawnBush();
+    SpawnFlower flower = new SpawnFlower();
 
     Undo undo = new Undo();
     Redo redo = new Redo();
@@ -16,21 +16,21 @@ public class Manager : MonoBehaviour
     {
         EntityFactory entityFactory = EntityFactory.GetInstance;
     }
-    public void SpawnPlayer()
+    public void SpawnRock()
     {
-        player.Execute();
+        rock.Execute();
     }
-    public void SpawnPlane()
+    public void SpawnTree()
     {
-        plane.Execute();
+        tree.Execute();
     }
-    public void SpawnCube()
+    public void SpawnBush()
     {
-        cube.Execute();
+        bush.Execute();
     }
-    public void SpawnSphere()
+    public void SpawnFlower()
     {
-        sphere.Execute();
+        flower.Execute();
     }
 
     public void Undo()

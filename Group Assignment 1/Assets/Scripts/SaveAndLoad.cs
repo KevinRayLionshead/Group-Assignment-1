@@ -64,13 +64,13 @@ public class SaveAndLoad : MonoBehaviour
             entityFactory.spawnPosition = position;
 
             if (tempList[0] == 0)
-                entityFactory.SpawnPlayer();
+                entityFactory.SpawnRock();
             else if (tempList[0] == 1)
-                entityFactory.SpawnPlane();
+                entityFactory.SpawnTree();
             else if (tempList[0] == 2)
-                entityFactory.SpawnCube();
+                entityFactory.SpawnBush();
             else
-                entityFactory.SpawnSphere();
+                entityFactory.SpawnFlower();
 
             tempList.RemoveAt(0);
         }
