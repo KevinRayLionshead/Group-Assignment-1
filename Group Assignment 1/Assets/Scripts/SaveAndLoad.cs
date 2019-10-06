@@ -6,16 +6,18 @@ using System.Runtime.InteropServices;
 public class SaveAndLoad : MonoBehaviour
 {
     EntityFactory entityFactory;
-    private void Start()
+    private void Start()//get the entity factory instance(singleton)
     {
         entityFactory = EntityFactory.GetInstance;
     }
+    //load in the dll functions
     const string DLL_NAME = "DLL";
     [DllImport(DLL_NAME)]
     private static extern void Save(float[] objectList);
     [DllImport(DLL_NAME)]
     private static extern System.IntPtr Load();
     
+    //Creates a temporary list for the float data to be loaded.
     public List<float> tempList;
 
     public void SaveButton()

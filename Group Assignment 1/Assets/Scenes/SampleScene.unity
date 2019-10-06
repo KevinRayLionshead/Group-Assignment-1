@@ -1200,7 +1200,7 @@ MonoBehaviour:
   undoObjectList: []
   undoTypeObjectList: []
   spawnPosition: {x: 0, y: 0, z: 0}
-  rock: {fileID: 0}
+  rock: {fileID: 7454907982412676040, guid: ec21af1b6bd2e6e4798d246c7d0b47d4, type: 3}
   tree: {fileID: 7454907982412676040, guid: ec21af1b6bd2e6e4798d246c7d0b47d4, type: 3}
   bush: {fileID: 1897833834890855701, guid: 390ce5c9c424942499397b9592f4a28d, type: 3}
   flower: {fileID: 4215512097779027242, guid: 3d10b8790e2fd1947aeedadb8a48d749, type: 3}
@@ -1667,7 +1667,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 864839722}
-        m_MethodName: SpawnPlayer
+        m_MethodName: SpawnRock
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
