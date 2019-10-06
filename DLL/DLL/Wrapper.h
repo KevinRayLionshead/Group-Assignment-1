@@ -6,8 +6,8 @@
 extern "C"
 {
 #endif
-	PLUGIN_API void Save();
-	PLUGIN_API void Load();
+	PLUGIN_API void Save(float* objectList);
+	PLUGIN_API float* Load();
 #ifdef __cplusplus
 }
 #endif

@@ -45,8 +45,10 @@ public class Undo : Command
         GameObject gameObject = entityFactory.objectList[entityFactory.objectList.Count - 1];
 
         entityFactory.undoObjectList.Add(gameObject);
+        entityFactory.undoTypeObjectList.Add(entityFactory.objectTypeList[entityFactory.objectList.Count - 1]);
 
         entityFactory.objectList.RemoveAt(entityFactory.objectList.Count - 1);
+        entityFactory.objectTypeList.RemoveAt(entityFactory.objectTypeList.Count - 1);
         gameObject.SetActive(false);
 
     }
@@ -58,13 +60,14 @@ public class Redo : Command
         EntityFactory entityFactory = EntityFactory.GetInstance;
 
         entityFactory.objectList.Add(entityFactory.undoObjectList[entityFactory.undoObjectList.Count-1]);
+        entityFactory.objectTypeList.Add(entityFactory.undoTypeObjectList[entityFactory.undoObjectList.Count-1]);
 
         GameObject gameObject = entityFactory.objectList[entityFactory.objectList.Count - 1];
 
         gameObject.SetActive(true);
 
-        entityFactory.undoObjectList.RemoveAt
-            (entityFactory.undoObjectList.Count-1);
+        entityFactory.undoObjectList.RemoveAt(entityFactory.undoObjectList.Count-1);
+        entityFactory.undoTypeObjectList.RemoveAt(entityFactory.undoTypeObjectList.Count-1);
     }
 }
 

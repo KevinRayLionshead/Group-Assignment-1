@@ -7,7 +7,9 @@ public class EntityFactory : MonoBehaviour
     private static EntityFactory instance = null;
 
     public List<GameObject> objectList;
+    public List<float> objectTypeList;
     public List<GameObject> undoObjectList;
+    public List<float> undoTypeObjectList;
 
     public Vector3 spawnPosition;
     public GameObject player;
@@ -33,13 +35,25 @@ public class EntityFactory : MonoBehaviour
         }
     }
     public void SpawnPlayer()
-    { objectList.Add(Instantiate(player, spawnPosition, Quaternion.identity)); }
+    {
+        objectList.Add(Instantiate(player, spawnPosition, Quaternion.identity));
+        objectTypeList.Add(0);
+    }
     public void SpawnPlane()
-    { objectList.Add(Instantiate(plane, spawnPosition, Quaternion.identity)); }
+    {
+        objectList.Add(Instantiate(plane, spawnPosition, Quaternion.identity));
+        objectTypeList.Add(1);
+    }
     public void SpawnCube()
-    { objectList.Add(Instantiate(cube, spawnPosition, Quaternion.identity)); }
+    {
+        objectList.Add(Instantiate(cube, spawnPosition, Quaternion.identity));
+        objectTypeList.Add(2);
+    }
     public void SpawnSphere()
-    { objectList.Add(Instantiate(sphere, spawnPosition, Quaternion.identity)); }
+    {
+        objectList.Add(Instantiate(sphere, spawnPosition, Quaternion.identity));
+        objectTypeList.Add(3);
+    }
 
     private void Update()
     {
