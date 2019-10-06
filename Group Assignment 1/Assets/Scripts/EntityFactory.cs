@@ -57,7 +57,7 @@ public class EntityFactory : MonoBehaviour
 
     private void Update()
     {
-
+        spawnPosition = Camera.main.transform.position + Camera.main.transform.forward*20;
         if (objectList.Count > 0)
         {
             GameObject gameObject = objectList[objectList.Count - 1];
