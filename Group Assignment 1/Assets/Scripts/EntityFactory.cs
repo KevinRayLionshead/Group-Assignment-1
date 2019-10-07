@@ -6,8 +6,10 @@ public class EntityFactory : MonoBehaviour
 {
     private static EntityFactory instance = null;
 
+    //stores created objects and their type
     public List<GameObject> objectList;
     public List<float> objectTypeList;
+    //stores objects that have been undone and thier type
     public List<GameObject> undoObjectList;
     public List<float> undoTypeObjectList;
 
@@ -17,11 +19,13 @@ public class EntityFactory : MonoBehaviour
     public GameObject bush;
     public GameObject flower;
 
+    //creates the instance of this entityfactory.
     private void Awake()
     {
         if (instance == null)
             instance = this;
     }
+    //There is only ever one instance of the entity factory(singleton)
     public static EntityFactory GetInstance
     {
         get
